@@ -25,12 +25,64 @@
 	<style type="text/css">
 		.slideshow { height: 200px; width: 400px; margin: auto }
 		.slideshow img { padding: 0px; border: 0px solid #ccc; background-color: #eee; }
-		.fixedFooter
-			{
+		.fixedFooter {
 			position:absolute;
 			bottom:0px;
 			width:100%;
-			}
+		}
+		.traffic {
+			background-image: url('images/traffic.png');
+			background-repeat:no-repeat;
+			background-position:50% 15%;
+		}
+		.media {
+			background-image: url('images/media.png');
+			background-repeat:no-repeat;
+			background-position:50% 15%;
+		}
+		.about {
+			background-image: url('images/about.png');
+			background-repeat:no-repeat;
+			background-position:50% 15%;
+		}
+		.contact {
+			background-image: url('images/contact.png');
+			background-repeat:no-repeat;
+			background-position:50% 15%;
+		}
+		.links {
+			background-image: url('images/links.png');
+			background-repeat:no-repeat;
+			background-position:50% 15%;
+		}
+		.mytab {
+			vertical-align:text-bottom;	
+
+		}
+		.media {
+			background-image: url('images/media.png');
+			background-repeat:no-repeat;
+			/*background-attachment:fixed;*/
+			background-position:50% 15%;			
+		}
+		.about {
+			background-image: url('images/about.png');
+			background-repeat:no-repeat;
+			/*background-attachment:fixed;*/
+			background-position:50% 15%;			
+		}
+		.contact {
+			background-image: url('images/contact.png');
+			background-repeat:no-repeat;
+			/*background-attachment:fixed;*/
+			background-position:50% 15%;			
+		}
+		.links {
+			background-image: url('images/links.png');
+			background-repeat:no-repeat;
+			/*background-attachment:fixed;*/
+			background-position:50% 15%;			
+		}
 	</style>
 <!-- include jQuery library -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
@@ -62,7 +114,7 @@ $(document).ready(function() {
 			<p>
 					 A nearly $1 billion replacement project will ensure the safety of commuters and truck drivers and protect Southern California's important role as a major trading hub. Construction is expected to last five years and generate, on average, 3,000 jobs per year.
 			</p>
-
+			
 			<!-- <a data-role="button" data-theme="b" href="#page1" data-icon="gear" data-iconpos="left">
 					Button
 			</a>
@@ -98,30 +150,31 @@ $(document).ready(function() {
 					</li>
 			</ul> -->
 	</div>	
-	<div data-role="navbar" data-iconpos="top" class="fixedFooter">
+
+	<div data-role="navbar"  class="fixedFooter">
 					<ul>
 							<li>
-									<a href="#page2" data-transition="slide" data-theme="a" data-icon="edit">
+									<a href="#page2" data-transition="slide" data-theme="a" class="traffic ui-btn-icon-top">
 											Traffic
 									</a>
 							</li>
 							<li>
-									<a href="#page1" data-transition="slide" data-theme="a" data-icon="edit">
+									<a href="#page1" data-transition="slide" data-theme="a" class="media ui-btn-icon-top">
 											Media
 									</a>
 							</li>
 							<li>
-									<a href="#page1" data-transition="slide" data-theme="a" data-icon="info">
+									<a href="#page1" data-transition="slide" data-theme="a" class="about ui-btn-icon-top">
 											About
 									</a>
 							</li>
 							<li>
-									<a href="#page1" data-transition="slide" data-theme="a" data-icon="info">
+									<a href="#page1" data-transition="slide" data-theme="a" class="contact ui-btn-icon-top">
 											Contact
 									</a>
 							</li>
 							<li>
-									<a href="#page1" data-transition="slide" data-theme="a" data-icon="arrow-u">
+									<a href="#page1" data-transition="slide" data-theme="a" class="links ui-btn-icon-top">
 											Links
 									</a>
 							</li>
