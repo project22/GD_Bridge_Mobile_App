@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>GD Bridge</title>
+	<!-- https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/images/icons-18-black.png -->
+	
+	
+	<link rel="stylesheet" href="jquery.mobile-1.3.1/jquery.mobile-1.3.1.css">
+	<link href="css/bootstrap.dcss" rel="stylesheet">
+	
+	<!-- Extra Codiqa features -->
+	<link rel="stylesheet" href="codiqa.ext.css">
+	
+	<!-- jQuery and jQuery Mobile -->
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="jquery.mobile-1.3.1/jquery.mobile-1.3.1.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+	<!-- Extra Codiqa features -->
+	<script src="https://d10ajoocuyu32n.cloudfront.net/codiqa.ext.js"></script>
+	 
+
+	<style type="text/css">
+		.slideshow { height: 200px; width: 400px; margin: auto }
+		.slideshow img { padding: 0px; border: 0px solid #ccc; background-color: #eee; }
+		.fixedFooter {
+			position:absolute;
+			bottom:0px;
+			width:100%;
+		}
+		.traffic {
+			background-image: url('images/traffic.png');
+			background-repeat:no-repeat;
+			background-position:50% 15%;
+		}
+		.media {
+			background-image: url('images/media.png');
+			background-repeat:no-repeat;
+			background-position:50% 15%;
+		}
+		.about {
+			background-image: url('images/about.png');
+			background-repeat:no-repeat;
+			background-position:50% 15%;
+		}
+		.contact {
+			background-image: url('images/contact.png');
+			background-repeat:no-repeat;
+			background-position:50% 15%;
+		}
+		.links {
+			background-image: url('images/links.png');
+			background-repeat:no-repeat;
+			background-position:50% 15%;
+		}
+		.mytab {
+			vertical-align:text-bottom;	
+
+		}
+		.content_bg {
+
+			background-image: url('images/craneBG2.png');		
+/*			background-image: url('images/craneBG2.png');		*/
+			background-size:100%;
+			background-position: bottom;
+		}
+		.vertical_scroll {
+			overflow-y: scroll;
+			overflow-x: hidden;
+			height: 370px;
+		}
+		.my-button {
+			margin:0px auto;
+			width: 300px;
+			height: 100px;
+		}
+		.my-centered {
+			text-align: center;
+		}
+	</style>
+<!-- include jQuery library -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<!-- include Cycle plugin -->
+<script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+		$('.slideshow').cycle({
+				fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+		});
+});
+</script> 
+</head>
+<body>
+<!-- Home -->
+<div data-role="page" id="page1" class="content_bg">
+	<div class="slideshow">
+			<img src="images/image1.png" width="400px" height="200px"/>
+			<img src="images/image2.png" width="400px" height="200px"/>
+			<img src="images/image3.png" width="400px" height="200px"/>
+			<img src="images/image4.png" width="400px" height="200px"/>
+	</div>
+	<div data-role="content">
+		<img src="images/GB_logo2.png" width="100%"/>
+		<br><br>
+		<p>
+			Stay connected throughout the course of the project by accessing the latest news and traffic conditions.</p>
+		<p>
+			This mobile app is just one of the many ways we will keep you informed.
+		</p>
+	</div>	
+
+	<div data-role="navbar" class="fixedFooter">
+		<ul>
+			<li>
+				<a href="#traffic" data-transition="fade" data-theme="a" class="traffic ui-btn-icon-top">
+						Traffic
+				</a>
+			</li>
+			<li>
+				<a href="#media" data-transition="fade" data-theme="a" class="media ui-btn-icon-top">
+						Media
+				</a>
+			</li>
+			<li>
+				<a href="#about_us" data-transition="fade" data-theme="a" class="about ui-btn-icon-top">
+						About
+				</a>
+			</li>
+			<li>
+				<a href="#contact" data-transition="fade" data-theme="a" class="contact ui-btn-icon-top">
+						Contact
+				</a>
+			</li>
+			<li>
+				<a href="#links" data-transition="fade" data-theme="a" class="links ui-btn-icon-top">
+						Links
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- Traffic -->
+<div data-role="page" id="traffic" class="content_bg">
+	<div data-theme="b" data-role="header">
+			<a data-role="button" data-rel="back" data-theme="b" href="#page1" data-icon="arrow-l"
+			data-iconpos="left" class="ui-btn-left">
+					Back
+			</a>
+			<h3>
+					Traffic
+			</h3>
+	</div>
+
+	<div data-role="content">
+	
+			<ul data-role="listview" data-divider-theme="b" data-inset="true">
+					<!-- <li data-role="list-divider" role="heading">
+							Divider
+					</li> -->
+					<li data-theme="c">
+							<a href="#current_conditions" data-transition="slide">
+									Current Conditions
+							</a>
+					</li>
+					<li data-theme="c">
+							<a href="#lane_closures" data-transition="slide">
+									Lane Closures / Detour Map
+							</a>
+					</li>
+					<li data-theme="c">
+							<a href="#audio_english" data-transition="slide">
+									Daily Audio Report
+							</a>
+					</li>
+					<li data-theme="c">
+							<a href="#audio_spanish" data-transition="slide">
+									Daily Auto Report (Spanish)
+							</a>
+					</li>
+			</ul>
+	</div>
+	<div data-role="navbar" class="fixedFooter">
+		<ul>
+			<li>
+				<a href="#traffic" data-transition="fade" data-theme="a" class="traffic ui-btn-icon-top ui-btn-active">
+						Traffic
+				</a>
+			</li>
+			<li>
+				<a href="#media" data-transition="fade" data-theme="a" class="media ui-btn-icon-top">
+						Media
+				</a>
+			</li>
+			<li>
+				<a href="#about_us" data-transition="fade" data-theme="a" class="about ui-btn-icon-top">
+						About
+				</a>
+			</li>
+			<li>
+				<a href="#contact" data-transition="fade" data-theme="a" class="contact ui-btn-icon-top">
+						Contact
+				</a>
+			</li>
+			<li>
+				<a href="#links" data-transition="fade" data-theme="a" class="links ui-btn-icon-top">
+						Links
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+	<!-- Lane Closures -->
+<div data-role="page" id="lane_closures" class="content_bg">
+	<div data-theme="b" data-role="header">
+			<a data-role="button" data-rel="back" data-theme="b" href="#page1" data-icon="arrow-l"
+			data-iconpos="left" class="ui-btn-left">
+					Back
+			</a>
+			<h3>
+					Lane Closures
+			</h3>
+	</div>
+
+	<div data-role="content">
+	
+		Custom Account Map Here
+	</div>
+	<div data-role="navbar" class="fixedFooter">
+		<ul>
+			<li>
+				<a href="#traffic" data-transition="fade" data-theme="a" class="traffic ui-btn-icon-top ui-btn-active">
+						Traffic
+				</a>
+			</li>
+			<li>
+				<a href="#media" data-transition="fade" data-theme="a" class="media ui-btn-icon-top">
+						Media
+				</a>
+			</li>
+			<li>
+				<a href="#about_us" data-transition="fade" data-theme="a" class="about ui-btn-icon-top">
+						About
+				</a>
+			</li>
+			<li>
+				<a href="#contact" data-transition="fade" data-theme="a" class="contact ui-btn-icon-top">
+						Contact
+				</a>
+			</li>
+			<li>
+				<a href="#links" data-transition="fade" data-theme="a" class="links ui-btn-icon-top">
+						Links
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+	<!-- Audio English -->
+<div data-role="page" id="audio_english" class="content_bg">
+	<div data-theme="b" data-role="header">
+			<a data-role="button" data-rel="back" data-theme="b" href="#page1" data-icon="arrow-l"
+			data-iconpos="left" class="ui-btn-left">
+					Back
+			</a>
+			<h3>
+					Daily Audio Report
+			</h3>
+	</div>
+
+	<div data-role="content">
+		<a data-role="button" data-transition="none" href="#page1" data-icon="arrow-r"
+        data-iconpos="top">
+            Play
+    </a>
+
+	</div>
+	<div data-role="navbar" class="fixedFooter">
+		<ul>
+			<li>
+				<a href="#traffic" data-transition="fade" data-theme="a" class="traffic ui-btn-icon-top ui-btn-active">
+						Traffic
+				</a>
+			</li>
+			<li>
+				<a href="#media" data-transition="fade" data-theme="a" class="media ui-btn-icon-top">
+						Media
+				</a>
+			</li>
+			<li>
+				<a href="#about_us" data-transition="fade" data-theme="a" class="about ui-btn-icon-top">
+						About
+				</a>
+			</li>
+			<li>
+				<a href="#contact" data-transition="fade" data-theme="a" class="contact ui-btn-icon-top">
+						Contact
+				</a>
+			</li>
+			<li>
+				<a href="#links" data-transition="fade" data-theme="a" class="links ui-btn-icon-top">
+						Links
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+	<!-- Daily Audio Report (Spanish) -->
+<div data-role="page" id="audio_spanish" class="content_bg">
+	<div data-theme="b" data-role="header">
+			<a data-role="button" data-rel="back" data-theme="b" href="#page1" data-icon="arrow-l"
+			data-iconpos="left" class="ui-btn-left">
+					Back
+			</a>
+			<h3>
+					Informe de Audio
+			</h3>
+	</div>
+
+	<div data-role="content">
+		<center>
+		<a data-role="button" href="#page1" style="width: 180px;">
+       <span style="font-size:30px"><img src="images/control-play-icon.png" style="vertical-align: middle; "> Play</span> 
+    </a>
+
+    <a data-role="button" href="#page1" style="width: 180px;">
+       <span style="font-size:30px">Play <img src="images/control-play-icon.png" style="vertical-align: middle; "></span> 
+    </a>
+  
+  	</center>
+	</div>
+	<div data-role="navbar" class="fixedFooter">
+		<ul>
+			<li>
+				<a href="#traffic" data-transition="fade" data-theme="a" class="traffic ui-btn-icon-top ui-btn-active">
+						Traffic
+				</a>
+			</li>
+			<li>
+				<a href="#media" data-transition="fade" data-theme="a" class="media ui-btn-icon-top">
+						Media
+				</a>
+			</li>
+			<li>
+				<a href="#about_us" data-transition="fade" data-theme="a" class="about ui-btn-icon-top">
+						About
+				</a>
+			</li>
+			<li>
+				<a href="#contact" data-transition="fade" data-theme="a" class="contact ui-btn-icon-top">
+						Contact
+				</a>
+			</li>
+			<li>
+				<a href="#links" data-transition="fade" data-theme="a" class="links ui-btn-icon-top">
+						Links
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+		
+
+
+<!-- Current Conditions -->
+<div data-role="page" id="current_conditions">
+	<div data-theme="b" data-role="header">
+			<a data-role="button" data-rel="back" data-theme="b" href="#page1" data-icon="arrow-l"
+			data-iconpos="left" class="ui-btn-left">
+					Back
+			</a>
+			<h3>
+					Current Conditions
+			</h3>
+	</div>
+
+	<div>
+<iframe width="425" height="525" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Gerald+Desmond+Bridge,+Interstate+710,+Long+Beach,+CA&amp;aq=0&amp;oq=gerald+&amp;sll=37.269174,-119.306607&amp;sspn=9.768935,16.567383&amp;ie=UTF8&amp;hq=Gerald+Desmond+Bridge,+Interstate+710,+Long+Beach,+CA&amp;t=m&amp;ll=33.788564,-118.206711&amp;spn=0.142667,0.146255&amp;z=12&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Gerald+Desmond+Bridge,+Interstate+710,+Long+Beach,+CA&amp;aq=0&amp;oq=gerald+&amp;sll=37.269174,-119.306607&amp;sspn=9.768935,16.567383&amp;ie=UTF8&amp;hq=Gerald+Desmond+Bridge,+Interstate+710,+Long+Beach,+CA&amp;t=m&amp;ll=33.788564,-118.206711&amp;spn=0.142667,0.146255&amp;z=12&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Gerald+Desmond+Bridge,+Interstate+710,+Long+Beach,+CA&amp;aq=0&amp;oq=gerald+&amp;sll=37.269174,-119.306607&amp;sspn=9.768935,16.567383&amp;ie=UTF8&amp;hq=Gerald+Desmond+Bridge,+Interstate+710,+Long+Beach,+CA&amp;t=m&amp;ll=33.785568,-118.21804&amp;spn=0.068483,0.109863&amp;z=13&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small><br /><small><a href="https://maps.google.com/maps?ie=UTF8&amp;q=gerald+desmond+bridge&amp;fb=1&amp;gl=us&amp;hq=gerald+desmond+bridge&amp;hnear=0x80c2a4cec2910019:0xb4170ab5ff23f5ab,Santa+Monica,+CA&amp;cid=0,0,14605115416173227142&amp;ll=33.764463,-118.22118&amp;spn=0.006295,0.006295&amp;t=m&amp;iwloc=A&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+	</div>
+
+	<div data-role="navbar" class="fixedFooter">
+	<ul>
+		<li>
+			<a href="#traffic" data-transition="fade" data-theme="a" class="traffic ui-btn-icon-top ui-btn-active">
+					Traffic
+			</a>
+		</li>
+		<li>
+			<a href="#media" data-transition="fade" data-theme="a" class="media ui-btn-icon-top">
+					Media
+			</a>
+		</li>
+		<li>
+			<a href="#about_us" data-transition="fade" data-theme="a" class="about ui-btn-icon-top">
+					About
+			</a>
+		</li>
+		<li>
+			<a href="#contact" data-transition="fade" data-theme="a" class="contact ui-btn-icon-top">
+					Contact
+			</a>
+		</li>
+		<li>
+			<a href="#links" data-transition="fade" data-theme="a" class="links ui-btn-icon-top">
+					Links
+			</a>
+		</li>
+	</ul>
+	</div>
+</div>
+
+<!-- Media -->
+<div data-role="page" id="media" class="content_bg">
+	<div data-theme="b" data-role="header">
+			<a data-role="button" data-rel="back" data-theme="b" href="#page1" data-icon="arrow-l"
+			data-iconpos="left" class="ui-btn-left">
+					Back
+			</a>
+			<h3>
+					Media
+			</h3>
+	</div>
+
+	<div data-role="content">
+		<ul data-role="listview" data-divider-theme="b" data-inset="true">
+			<li data-theme="c">
+					<a href="#news" data-transition="slide">
+							News
+					</a>
+			</li>
+			<li data-theme="c">
+					<a href="#" data-transition="slide">
+							Live Construction Cameras
+					</a>
+			</li>
+			<li data-theme="c">
+					<a href="#" data-transition="slide">
+							Photo Gallery
+					</a>
+			</li>
+			<li data-theme="c">
+					<a href="#" data-transition="slide">
+							Renderings
+					</a>
+			</li>
+			<li data-theme="c">
+					<a href="#" data-transition="slide">
+							Videos
+					</a>
+			</li>
+			<li data-theme="c">
+					<a href="#" data-transition="slide">
+							Media Contacts
+					</a>
+			</li>
+		</ul>
+	</div>
+	<div data-role="navbar" class="fixedFooter">
+		<ul>
+			<li>
+				<a href="#traffic" data-transition="fade" data-theme="a" class="traffic ui-btn-icon-top">
+						Traffic
+				</a>
+			</li>
+			<li>
+				<a href="#media" data-transition="fade" data-theme="a" class="media ui-btn-icon-top  ui-btn-active">
+						Media
+				</a>
+			</li>
+			<li>
+				<a href="#about_us" data-transition="fade" data-theme="a" class="about ui-btn-icon-top">
+						About
+				</a>
+			</li>
+			<li>
+				<a href="#contact" data-transition="fade" data-theme="a" class="contact ui-btn-icon-top">
+						Contact
+				</a>
+			</li>
+			<li>
+				<a href="#links" data-transition="fade" data-theme="a" class="links ui-btn-icon-top">
+						Links
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- News -->
+<div data-role="page" id="news" class="content_bg">
+	<div data-theme="b" data-role="header">
+			<a data-role="button" data-rel="back" data-theme="b" href="#page1" data-icon="arrow-l"
+			data-iconpos="left" class="ui-btn-left">
+					Back
+			</a>
+			<h3>
+					News
+			</h3>
+	</div>
+
+	<div data-role="content">
+		<!-- <iframe src="http://www.newgdbridge.com/news/default.asp"></iframe> -->
+		<div class="vertical_scroll">
+		<p>Ocean Boulevard — a major highway serving the Long Beach-San Pedro area — re-opened at 12:11 a.m. today (Sunday), more than 28 hours ahead of schedule. Construction crews who began demolishing the last major sections of the Pier T Avenue off-ramp on Friday night were able to complete the work, remove debris and have the highway ready for commuters and truck drivers ahead of the 5 a.m. Monday (July 15) deadline.</p>
+		<p>
+		The weekend closure affected a key stretch of Ocean Boulevard and the Gerald Desmond Bridge—a major commuter route between Long Beach, San Pedro and other South Bay communities. This section – between State – also serves as a primary road for trucks entering and leaving the Port of Long Beach.  Motorists heeded warnings to avoid the area during the closure and officials reported few problems along alternate routes.</p>
+		<p>
+		The demolition work now clears the way for SFI.
+		</p>
+		</div>
+
+	</div>
+	<div data-role="navbar" class="fixedFooter">
+		<ul>
+			<li>
+				<a href="#traffic" data-transition="fade" data-theme="a" class="traffic ui-btn-icon-top">
+						Traffic
+				</a>
+			</li>
+			<li>
+				<a href="#media" data-transition="fade" data-theme="a" class="media ui-btn-icon-top  ui-btn-active">
+						Media
+				</a>
+			</li>
+			<li>
+				<a href="#about_us" data-transition="fade" data-theme="a" class="about ui-btn-icon-top">
+						About
+				</a>
+			</li>
+			<li>
+				<a href="#contact" data-transition="fade" data-theme="a" class="contact ui-btn-icon-top">
+						Contact
+				</a>
+			</li>
+			<li>
+				<a href="#links" data-transition="fade" data-theme="a" class="links ui-btn-icon-top">
+						Links
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- About Us-->
+<div data-role="page" id="about_us" class="content_bg">
+	<div data-theme="b" data-role="header">
+			<a data-role="button" data-rel="back" data-theme="b" href="#page1" data-icon="arrow-l"
+			data-iconpos="left" class="ui-btn-left">
+					Back
+			</a>
+			<h3>
+					About Us
+			</h3>
+	</div>
+
+	<div data-role="content">
+	
+			<ul data-role="listview" data-divider-theme="b" data-inset="true">
+					<!-- <li data-role="list-divider" role="heading">
+							Divider
+					</li> -->
+					<li data-theme="c">
+							<a href="#page" data-transition="slide">
+									Project Description
+							</a>
+					</li>
+					<li data-theme="c">
+							<a href="#page" data-transition="slide">
+									Project Benefits
+							</a>
+					</li>
+					<li data-theme="c">
+							<a href="#page" data-transition="slide">
+									Who We Serve in the Community
+							</a>
+					</li>
+					<li data-theme="c">
+							<a href="#page" data-transition="slide">
+									Project Milestones
+							</a>
+					</li>
+			</ul>
+	</div>
+	<div data-role="navbar" class="fixedFooter">
+		<ul>
+			<li>
+				<a href="#traffic" data-transition="fade" data-theme="a" class="traffic ui-btn-icon-top">
+						Traffic
+				</a>
+			</li>
+			<li>
+				<a href="#media" data-transition="fade" data-theme="a" class="media ui-btn-icon-top">
+						Media
+				</a>
+			</li>
+			<li>
+				<a href="#about_us" data-transition="fade" data-theme="a" class="about ui-btn-icon-top  ui-btn-active">
+						About
+				</a>
+			</li>
+			<li>
+				<a href="#contact" data-transition="fade" data-theme="a" class="contact ui-btn-icon-top">
+						Contact
+				</a>
+			</li>
+			<li>
+				<a href="#links" data-transition="fade" data-theme="a" class="links ui-btn-icon-top">
+						Links
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Contact -->
+<div data-role="page" id="contact" class="content_bg">
+	<div data-theme="b" data-role="header">
+			<a data-role="button" data-rel="back" data-theme="b" href="#page1" data-icon="arrow-l"
+			data-iconpos="left" class="ui-btn-left">
+					Back
+			</a>
+			<h3>
+					Contact
+			</h3>
+	</div>
+
+	<div data-role="content">
+	
+		<div>
+		<img src="images/GB_logo2.png" width="100%"/>
+			<p>
+			<b>Gerald Desmond Bridge</b><br>
+			Project Helpline<br>
+			562-242-3555<br>
+			</p><p>
+			April Galvan<br>
+			562-485-2752<br>
+			april.galvan@gdbrproject.com<br>
+			</p><p>
+			<b>Employment Inquiries</b><br>
+			Lynette Hamm<br>
+			lhamm@sfigdb.com<br>
+			</p><p>
+			Janelle MacDonald<br>
+			jmacdonald@sfigdb.com<br>
+			</p>
+		</div>
+	</div>
+	<div data-role="navbar" class="fixedFooter">
+		<ul>
+			<li>
+				<a href="#traffic" data-transition="fade" data-theme="a" class="traffic ui-btn-icon-top">
+						Traffic
+				</a>
+			</li>
+			<li>
+				<a href="#media" data-transition="fade" data-theme="a" class="media ui-btn-icon-top">
+						Media
+				</a>
+			</li>
+			<li>
+				<a href="#about_us" data-transition="fade" data-theme="a" class="about ui-btn-icon-top">
+						About
+				</a>
+			</li>
+			<li>
+				<a href="#contact" data-transition="fade" data-theme="a" class="contact ui-btn-icon-top ui-btn-active">
+						Contact
+				</a>
+			</li>
+			<li>
+				<a href="#links" data-transition="fade" data-theme="a" class="links ui-btn-icon-top">
+						Links
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+<!-- Links -->
+<div data-role="page" id="links" class="content_bg">
+	<div data-theme="b" data-role="header">
+			<a data-role="button" data-rel="back" data-theme="b" href="#page1" data-icon="arrow-l"
+			data-iconpos="left" class="ui-btn-left">
+					Back
+			</a>
+			<h3>
+					Links
+			</h3>
+	</div>
+
+	<div data-role="content">
+			<ul data-role="listview" data-divider-theme="b" data-inset="true">
+				<li data-theme="c">
+						<a href="#page" data-transition="slide">
+								Website
+						</a>
+				</li>
+				<li data-theme="c">
+						<a href="#page" data-transition="slide">
+								Follow Us on Twitter
+						</a>
+				</li>
+				<li data-theme="c">
+						<a href="#page" data-transition="slide">
+								Like Us on Facebook
+						</a>
+				</li>
+				<li data-theme="c">
+						<a href="#page" data-transition="slide">
+								Follow Us on Instagram
+						</a>
+				</li>
+				<li data-theme="c">
+						<a href="#page" data-transition="slide">
+								Sign up for Traffic Updates
+						</a>
+				</li>
+			</ul>
+	</div>
+	<div data-role="navbar" class="fixedFooter">
+		<ul>
+			<li>
+				<a href="#traffic" data-transition="fade" data-theme="a" class="traffic ui-btn-icon-top">
+						Traffic
+				</a>
+			</li>
+			<li>
+				<a href="#media" data-transition="fade" data-theme="a" class="media ui-btn-icon-top">
+						Media
+				</a>
+			</li>
+			<li>
+				<a href="#about_us" data-transition="fade" data-theme="a" class="about ui-btn-icon-top">
+						About
+				</a>
+			</li>
+			<li>
+				<a href="#contact" data-transition="fade" data-theme="a" class="contact ui-btn-icon-top">
+						Contact
+				</a>
+			</li>
+			<li>
+				<a href="#links" data-transition="fade" data-theme="a" class="links ui-btn-icon-top ui-btn-active">
+						Links
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
